@@ -1,0 +1,127 @@
+/* Seus estilos existentes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: -webkit-linear-gradient(225deg, rgb(251, 175, 21), rgb(251, 21, 242), rgb(21, 198, 251)) 0% 0% / 300% 300%;
+}
+
+/* Estilos do menu principal */
+.menuPrincipal {
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 12px;
+  padding: 14px 20px 14px 20px;
+  border-radius: 0.7em;
+  background: -webkit-linear-gradient(225deg, rgb(251, 175, 21), rgb(251, 21, 242), rgb(21, 198, 251)) 0% 0% / 300% 300%;
+  background-size: 200% auto;
+  -webkit-animation: gradient_move 3s ease infinite;
+  animation: gradient_move 3s ease infinite;
+  position: relative;
+}
+
+.menuPrincipal ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  cursor: pointer;
+  gap: 20px;
+}
+
+.menuPrincipal ul button {
+  color: white;
+  padding: 14px 20px 14px 20px;
+  border-radius: 0.7em;
+  background: -webkit-linear-gradient(225deg, rgb(251, 175, 21), rgb(251, 21, 242), rgb(21, 198, 251)) 0% 0% / 300% 300%;
+  background-size: 200% auto;
+  -webkit-animation: gradient_move 3s ease infinite;
+  animation: gradient_move 3s ease infinite;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  text-transform: uppercase;
+  width: 120px;
+  font-size: 10px;
+  border: none;
+  transition: 0.25s ease;
+}
+
+.menuPrincipal ul button:hover {
+  border-radius: 25px;
+}
+
+.logo {
+  position: absolute;
+  top: -1px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: transparent; /* Removido o fundo branco */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: float 3s ease-in-out infinite;
+  overflow: hidden; /* Para garantir que a imagem fique dentro do círculo */
+}
+
+.logo img {
+  width: 100%; /* A imagem preencherá o contêiner */
+  height: 100%;
+  object-fit: cover; /* Isso garantirá que a imagem cubra todo o espaço sem distorção */
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Animação do gradiente */
+@-webkit-keyframes gradient_move {
+  0%{background-position: 0% 92%}
+  50%{background-position: 100% 9%}
+  100%{background-position: 0% 92%}
+}
+
+@keyframes gradient_move {
+  0%{background-position: 0% 92%}
+  50%{background-position: 100% 9%}
+  100%{background-position: 0% 92%}
+}
+
+/* Ícones */
+.menuPrincipal ul button i {
+  margin-right: 5px;
+}
+
+/* Media queries */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .menuPrincipal ul {
+      flex-wrap: wrap;
+  }
+  .menuPrincipal ul button {
+      width: calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 767px) {
+  .menuPrincipal ul {
+      flex-direction: column;
+  }
+  .menuPrincipal ul button {
+      width: 100%;
+  }
+}
